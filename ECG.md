@@ -1225,7 +1225,7 @@ P波をセンシングして、その後に自己のQRS波が出ない時に、A
 左脚ブロックがあると急性心筋梗塞を発症した時に心電図変化が不顕性化され、心電図診断に苦慮することがある。
 左脚ブロックにおける急性心筋梗塞の心電図診断基準(Sgarbossa criteria)では、合計スコアが3点以上の場合に、急性心筋梗塞の可能性が高いとされている。
 
-<img src="ECG.assets/image-20210117111339375.png" alt="image-20210117111339375" style="zoom:40%;" />
+<img src="ECG.assets/image-20210117111339375.png" alt="image-20210117111339375" style="zoom:30%;" />
 
 しかし、この基準は特異度は高いが、感度は低いため、除外診断に用いることができない。
 Sgarbossa criteriaの基準③を「STの高さをQRS波の高さで割った比がー0.25未満」に変更することにより感度が90%に上昇したと報告がある。
@@ -1247,3 +1247,11 @@ Sgarbossa criteriaの基準③を「STの高さをQRS波の高さで割った比
 
 <img src="ECG.assets/image-20210117114326789.png" alt="image-20210117114326789" style="zoom:150%;" />
 
+<img src="ECG.assets/image-20210302204018626.png" alt="image-20210302204018626" style="zoom:20%;" />
+
+## 心臓移植後の心電図
+
+レシピエント側の左右心房の一部を残してドナーの両心房を吻合する心臓移植(両心房法)術後では、心電図でレシピエントの心房のP波と、ドナーの心房のP波がみられる。
+レシピエントのP波はQRSとは連結せず、ドナーの心房からのP波はQRSに先行する。
+
+<img src="ECG.assets/Orthotopic_Heart_Transplant.png" alt="img" style="zoom: 80%;" />

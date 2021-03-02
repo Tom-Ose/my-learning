@@ -28,3 +28,8 @@
 | -**tin**ib   | **T**yrosine k**in**ase inhibitor                 | Imatinib    |
 | -**zom**ib   | Protea**som**e inihibitor                         | Bortezomib  |
 
+### Receptor fusion proteins(-cept)
+
+| 接尾語 | 意味             | 例         |
+| ------ | ---------------- | ---------- |
+| -cept  | TNF-α antagonist | Etanercept |

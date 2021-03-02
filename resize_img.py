@@ -14,7 +14,7 @@ with open('./resized_list.txt') as f:
 		if n in resized_img_names:
 			# print("リサイズ済：{}".format(n))
 			continue
-		if n[0] == "i": # ファイルが写真であることを確認してリサイズ
+		if n.endswith('.png'): # ファイルが写真であることを確認してリサイズ
 			print(n)
 			image = Image.open("./ECG.assets/{}".format(n))
 			resize_img = image.resize((int(image.width/2), int(image.height/2)), Image.LANCZOS)
