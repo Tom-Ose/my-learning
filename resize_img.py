@@ -12,9 +12,8 @@ with open('./resized_list.txt') as f:
 	for n in file_names:
 		# print(n)
 		if n in resized_img_names:
-			# print("リサイズ済：{}".format(n))
 			continue
-		if n.endswith('.png'): # ファイルが写真であることを確認してリサイズ
+		if n.endswith('.png'):
 			print(n)
 			image = Image.open("./ECG.assets/{}".format(n))
 			resize_img = image.resize((int(image.width/2), int(image.height/2)), Image.LANCZOS)
@@ -25,4 +24,4 @@ with open('./resized_list.txt') as f:
 with open('./resized_list.txt', mode="a") as f:
 	f.write('\n')
 	f.writelines('\n'.join(new_resized_list))
-	print('{}個のファイルをリサイズしました'.format(new_resized_count))
+	print('resized {} files'.format(new_resized_count))
