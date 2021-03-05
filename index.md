@@ -20,6 +20,8 @@
 
 ## [抗がん剤](anti-cancer.html)
 
+## [薬剤](drug.html)
+
 ## [公式](公式.html)
 
 ## [反応経路一覧](反応経路一覧.html)
