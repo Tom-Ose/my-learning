@@ -20,7 +20,7 @@
 
 ## [抗がん剤](anti-cancer.html)
 
-## [薬剤](drug.html)
+## [薬剤リスト](https://script.google.com/a/macros/s.okayama-u.ac.jp/s/AKfycbxqkFNpcqID0COskx5k3VElPe4KjxK8gm8fTEFAS5GY_Pmt3OQIpLo2na-vk_MhsSpC/exec)
 
 ## [公式](公式.html)
 
