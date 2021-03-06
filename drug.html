@@ -679,8 +679,7 @@ footer {
 <script>
     const url = 'https://script.googleusercontent.com/a/macros/s.okayama-u.ac.jp/echo?user_content_key=5nqq-RMk47T1yFSceAE3AxrHXO0FmaEWGwGyPnVbyGxMdyjwePoctf5aV3fbaBhkV2mcfoil6fRcNRJleM9Zj-kS4VJYg9ywOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKB0X-saqNhCHpxjldzubdcYho89uN76N-u87_zRCXRF6KLDRUTvcHqRo14o7zYW9uksFjqZSN7ujmq4Ia3ElijVXjI-OgvRn2ofItQALp17M7sRmt9baTLyGPPhZEMLTvZcy6pr-Oj0FQ&lib=MhOHOkFC3gIHCl5puCd1FyJhG3lFpo0w5'
     fetch(url, {
-        mode: 'cors',
-        credentials: 'include' // ここを追加。
+        mode: 'cors'
     })
     .then((data) => {
         console.log(data)
