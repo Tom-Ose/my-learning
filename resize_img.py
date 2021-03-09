@@ -13,7 +13,7 @@ with open('./resized_list.txt') as f:
 		# print(n)
 		if n in resized_img_names:
 			continue
-		if n.endswith('.png'):
+		if n.endswith(('.png', '.jpeg', '.jpg')):
 			print(n)
 			image = Image.open("./ECG.assets/{}".format(n))
 			resize_img = image.resize((int(image.width/2), int(image.height/2)), Image.LANCZOS)
