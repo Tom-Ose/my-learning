@@ -490,9 +490,9 @@ V1誘導でQRS波の陽性成分が陰性成分より大きい場合が右脚ブ
 心室頻拍は、発作時のQRS波形が一定である単形性心室頻拍と、QRS波形が変化する多形性心室頻拍(polymorphic VT)に分けられる。
 多形性心室頻拍はいくつかの異なる起源または伝導路に起因し、不規則で多様な形のQRS波を伴う。
 
-<img src="ECG.assets/pic_fig11-02.jpg" alt="img" style="zoom:50%;" />
+<img src="ECG.assets/pic_fig11-02.jpg" alt="img" style="zoom:90%;" />
 
-<img src="ECG.assets/pic_fig11-03.jpg" alt="img" style="zoom: 50%;" />
+<img src="ECG.assets/pic_fig11-03.jpg" alt="img" style="zoom: 90%;" />
 
 #### 特発性心室頻拍
 
