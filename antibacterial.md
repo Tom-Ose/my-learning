@@ -1,6 +1,8 @@
-[TOC]
+##### [＜Topに戻る](https://tom-ose.github.io/my-learning)
 
 # 抗菌薬
+
+[TOC]
 
 ## β-ラクタム系
 
