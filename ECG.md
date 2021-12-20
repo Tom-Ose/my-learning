@@ -1,6 +1,7 @@
-[TOC]
+[＜Topに戻る](https://tom-ose.github.io/my-learning)
 
 # 心電図
+[TOC]
 
 ## 読み方
 
