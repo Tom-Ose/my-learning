@@ -1,5 +1,3 @@
-##### [＜Topに戻る](https://tom-ose.github.io/my-learning)
-
 # 抗がん剤
 
 [TOC]
