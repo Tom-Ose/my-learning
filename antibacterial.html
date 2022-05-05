@@ -28,7 +28,7 @@ a:active, a:hover { outline: 0px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
 .typora-export .task-list-item input { pointer-events: none; }
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
   .CodeMirror-sizer { margin-left: 0px !important; }
@@ -55,7 +55,7 @@ h6 { font-size: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
@@ -94,10 +94,10 @@ blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
-@media print { 
+@media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -118,7 +118,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
 .math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
 .md-toc-content::after, .md-toc::after { display: none; }
 .md-toc-item { display: block; color: rgb(65, 131, 196); }
@@ -131,7 +131,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .md-toc-h4 .md-toc-inner { margin-left: 6em; }
 .md-toc-h5 .md-toc-inner { margin-left: 8em; }
 .md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) { 
+@media screen and (max-width: 48em) {
   .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
   .md-toc-h4 .md-toc-inner { margin-left: 5em; }
   .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
@@ -142,7 +142,7 @@ a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; 
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
 code { text-align: left; }
 a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
@@ -158,7 +158,7 @@ mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 .md-expand mark .md-meta { opacity: 0.3 !important; }
 mark .md-meta { color: rgb(0, 0, 0); }
-@media print { 
+@media print {
   .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
 }
 .md-diagram-panel .messageText { stroke: none !important; }
@@ -171,10 +171,10 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
 .typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
 .typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
   .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
 }
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 800px) {
   .typora-export-sidebar { display: none; }
 }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
@@ -777,9 +777,9 @@ footer {
 <u><span>バンコマイシンをMRSA感染症に用いる場合には、トラフ値が有効性と副作用の指標になり、一般的には10〜20µg/mLにすること推奨されている。</span></u>
 <span>一方、アルベカシンの場合、ピーク値は有効性の指標で、トラフ値は副作用の指標となる。具体的には、アルベカシンではピーク値を15〜20µg/mL、トラフ値を2µg/mL未満にすることが目安となる。</span></p><p><span>腎機能によって調整が必要で、通常24時間ごとに投与するが、腎機能が悪い場合は48時間ごとになる。</span></p><blockquote><h6 id='tdmを行う主な薬剤'><strong><span>TDMを行う主な薬剤</span></strong></h6><figure><table><thead><tr><th><span>種類</span></th><th><span>名称</span></th></tr></thead><tbody><tr><td><strong><span>抗菌薬</span></strong></td><td><span>グリコペプチド系抗菌薬：バンコマイシン，テイコプラニン</span><br><span>アミノ配糖体系抗菌薬：アルベカシン，アミカシン，ゲンタマイシン</span></td></tr><tr><td><strong><span>強心薬</span></strong></td><td><span>ジゴキシン，ジギトキシン</span></td></tr><tr><td><strong><span>抗てんかん薬</span></strong></td><td><span>バルプロ酸，フェニトイン，カルバマゼピン，フェノバルビタール</span></td></tr><tr><td><strong><span>抗不整脈薬</span></strong></td><td><span>アミオダロン，フレカイニド，キニジン，リドカイン，プロカインアミド</span></td></tr><tr><td><strong><span>免疫抑制薬</span></strong></td><td><span>シクロスポリン，タクロリムス</span></td></tr><tr><td><strong><span>その他</span></strong></td><td><span>ハロペリドール，テオフィリン，サリチル酸塩，リチウム，メトトレキサート</span></td></tr></tbody></table></figure></blockquote><h2 id='抗結核薬'><span>抗結核薬</span></h2><p><span>結核の治療は、複数の薬剤を使うこと、また長期にわたることから、副作用が起こる可能性が高くなる。</span></p><figure><table><thead><tr><th>&nbsp;</th><th><span>作用機序</span></th><th><span>主な副作用</span></th></tr></thead><tbody><tr><td><span>イソニアジド(INH)</span></td><td><span>細胞壁を構成するミコール酸の合成阻害</span></td><td><strong><span>ビタミンB6欠乏</span></strong><span>による末梢神経障害</span></td></tr><tr><td><span>リファンピシン(RFP)</span></td><td><span>RNA合成阻害</span></td><td><strong><span>肝機能障害</span></strong><span>、発疹、血液障害、胃腸障害、</span><strong><span>尿が赤くなる</span></strong></td></tr><tr><td><span>ピラジナミド(PZA)</span></td><td><span>不明</span></td><td><strong><span>高尿酸血症</span></strong><span>、肝障害</span></td></tr><tr><td><span>エタンブトール(EB)</span></td><td><span>細胞壁を構成するアラビノガラクタン、リポアラビノマンナンの合成阻害</span></td><td><strong><span>視力障害</span></strong></td></tr><tr><td><span>ストレプトマイシン(SM)</span></td><td><span>タンパク質合成阻害(アミノグリコシド系)</span></td><td><strong><span>内耳障害</span></strong><span>、腎障害</span></td></tr></tbody></table></figure><figure><table><thead><tr><th><span>薬品名</span></th><th><span>略称</span></th><th><span>投薬</span></th></tr></thead><tbody><tr><td><span>イソニアジド(イスコチン®)</span></td><td><span>INH</span></td><td><span>経口/非経口</span></td></tr></tbody></table></figure><p><span>イソニコチン酸ヒドラジドとも呼ばれる。細胞壁のミコール酸合成を阻害する。</span>
 <span>ビタミンB6の非活性型であるピリドキサールはピリドキサールキナーゼによりリン酸化され、活性型のピリドキサールリン酸に変化する。しかし、INHがあると、非酵素的にピリドキサールとイソニアジドが結合し、イソニアジド-ピリドキサールヒドラゾンになり尿中に排泄されるため、ビタミンB6の欠乏が起こると言われている。</span>
-<span>治療は活性型ビタミンB6の投与。わが国ではINH投与開始時から予防的にビタミンB6を投与することが多い。</span></p><figure><table><thead><tr><th><span>薬品名</span></th><th><span>略称</span></th><th><span>投薬</span></th></tr></thead><tbody><tr><td><span>リファンピシン(リファジン®)</span></td><td><span>RFP</span></td><td><span>経口</span></td></tr><tr><td><span>リファブチン(ミコブティン®)</span></td><td><span>RBT</span></td><td><span>経口</span></td></tr></tbody></table></figure><p><span>リファマイシン系に分類され、RNAポリメラーゼを阻害する。</span>
+<span>治療は活性型ビタミンB6の投与。わが国ではINH投与開始時から予防的にビタミンB6を投与することが多い。</span></p><figure><table><thead><tr><th><span>薬品名</span></th><th><span>略称</span></th><th><span>投薬</span></th></tr></thead><tbody><tr><td><span>リファンピシン(リファジン®)</span></td><td><span>RFP</span></td><td><span>経口</span></td></tr><tr><td><span>リファブチン(ミコブティン®)</span></td><td><span>RBT</span></td><td><span>経口</span></td></tr><tr><td><span>リファキシミン(リフキシマ®)</span></td><td><span>RFX</span></td><td><span>経口</span></td></tr></tbody></table></figure><p><span>リファマイシン系に分類され、RNAポリメラーゼを阻害する。</span>
 <span>通常リファンピシンを使用するが、併用薬などで使用できない場合にリファブチンを用いる。</span>
-<u><span>真っ赤な薬で尿が赤くなる</span></u><span>ため、患者への事前通告が重要。</span></p><figure><table><thead><tr><th><span>薬品名</span></th><th><span>略称</span></th><th><span>投薬</span></th></tr></thead><tbody><tr><td><span>ピラジナミド(ピラマイド®)</span></td><td><span>PZA</span></td><td><span>経口</span></td></tr></tbody></table></figure><p><span>肝臓で代謝され、アミド基の部分が変化し、ピラジン酸となることで抗菌活性を示す。</span>
+<span>リファキシミンは肝性脳症の治療薬であり、腸内細菌のアンモニア産生を抑制する。他のリファマイシン系と交差耐性を起こす可能性があるため、結核を合併している肝性脳症患者では他の治療法を用いるようにする。</span></p><p><u><span>真っ赤な薬で尿が赤くなる</span></u><span>ため、患者への事前通告が重要。</span></p><figure><table><thead><tr><th><span>薬品名</span></th><th><span>略称</span></th><th><span>投薬</span></th></tr></thead><tbody><tr><td><span>ピラジナミド(ピラマイド®)</span></td><td><span>PZA</span></td><td><span>経口</span></td></tr></tbody></table></figure><p><span>肝臓で代謝され、アミド基の部分が変化し、ピラジン酸となることで抗菌活性を示す。</span>
 <span>pH5.0〜5.5の酸性環境で働くため、Mφのファゴソーム内に取り込まれた結核菌に強い効果を示す。</span>
 <span>結核の治療初期はファゴソーム内が酸性の環境になっていると考えられており、治療初期2ヶ月のみPZAは用いられる。</span>
 <span>副作用として、高尿酸血症がある。尿酸は腎臓の糸球体で100%濾過されるが、尿細管にあるURAT1により再吸収される。PZAの代謝産物であるピラジンカルボン酸はURAT1の交換基質の一つで、ピラジンカルボン酸が尿細管から排泄される代わりに、尿酸が再吸収されるため、血中尿酸値が上昇する。</span></p><figure><table><thead><tr><th><span>薬品名</span></th><th><span>略称</span></th><th><span>投薬</span></th></tr></thead><tbody><tr><td><span>エタンブトール(エサンブトール®)</span></td><td><span>EB</span></td><td><span>経口</span></td></tr></tbody></table></figure><p><span>結核の治療ではEBかストレプトマイシン(SM)のどちらかを使う。SMは注射剤しかないため、EBが選ばれる傾向にある。</span>
