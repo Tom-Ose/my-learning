@@ -6,21 +6,22 @@
 .appended_url{
     position: fixed;
     top: 0;
+    right: 0;
     width: 100vw;
-    background-color: white;
-    padding: 10px;
+    background-color: var(--bg-color);
+    padding: 10px 25px;
     margin: 0;
 }
 </style>
 <style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -28,11 +29,9 @@ a:active, a:hover { outline: 0px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
 .typora-export .task-list-item input { pointer-events: none; }
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
@@ -55,17 +54,17 @@ h6 { font-size: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
 .CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
-.CodeMirror-linenumber { }
+.CodeMirror-linenumber { user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -82,6 +81,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
 .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
@@ -94,10 +94,10 @@ blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
-@media print { 
+@media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -118,7 +118,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
 .math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
 .md-toc-content::after, .md-toc::after { display: none; }
 .md-toc-item { display: block; color: rgb(65, 131, 196); }
@@ -131,7 +131,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .md-toc-h4 .md-toc-inner { margin-left: 6em; }
 .md-toc-h5 .md-toc-inner { margin-left: 8em; }
 .md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) { 
+@media screen and (max-width: 48em) {
   .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
   .md-toc-h4 .md-toc-inner { margin-left: 5em; }
   .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
@@ -139,10 +139,11 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
 code { text-align: left; }
 a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
@@ -158,7 +159,7 @@ mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 .md-expand mark .md-meta { opacity: 0.3 !important; }
 mark .md-meta { color: rgb(0, 0, 0); }
-@media print { 
+@media print {
   .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
 }
 .md-diagram-panel .messageText { stroke: none !important; }
@@ -171,16 +172,16 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
 .typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
 .typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
   .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
 }
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 800px) {
   .typora-export-sidebar { display: none; }
 }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -210,9 +211,151 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .md-inline-math-container mjx-container { zoom: 0.95; }
 
 
-:root {
-    --side-bar-bg-color: #fff;
-    --control-text-color: #777;
+/* 注：感谢：MamoruDS, 这个文件的大部分内容来自 https://github.com/MamoruDS/typora-vue-dark-theme. */
+
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    background: #555;
+    color: #fff;
+}
+
+.md-rawblock-on-edit>.md-rawblock-tooltip, .md-rawblock:hover>.md-rawblock-container, .md-rawblock:hover>.md-rawblock-tooltip {
+    background: #555;
+    color: #fff;
+}
+
+/* code color */
+.cm-s-inner .cm-keyword {
+    color: #bb7fc3
+}
+
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom {
+    color: #9088cc
+}
+
+.cm-s-inner .cm-number {
+    color: #88b2a1
+}
+
+.cm-s-inner .cm-def {
+    color: #7f7fff
+}
+
+.cm-s-inner .cm-variable {
+    color: #efefef
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #7faad4
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #7fc3aa
+}
+
+.cm-s-inner .cm-string {
+    color: #d48888
+}
+
+.cm-s-inner .cm-property {
+    color: #efefef
+}
+
+.cm-s-inner .cm-operator {
+    color: #cb8c8c
+}
+
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment {
+    color: hsl(0, 0%, 35%)
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #ffaa7f
+}
+
+.cm-s-inner .cm-meta {
+    color: hsl(0, 0%, 33%)
+}
+
+.cm-s-inner .cm-qualifier {
+    color: hsl(0, 0%, 33%)
+}
+
+.cm-s-inner .cm-builtin {
+    color: #997fd4
+}
+
+.cm-s-inner .cm-bracket {
+    color: #ccccbb
+}
+
+.cm-s-inner .cm-tag {
+    color: #88bb7f
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7f7fe5
+}
+
+.cm-s-inner .cm-header, .cm-s-inner.cm-header {
+    color: #7f7fff
+}
+
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote {
+    color: #7fcc7f
+}
+
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr {
+    color: hsl(0, 0%, 60%)
+}
+
+.cm-s-inner .cm-link, .cm-s-inner.cm-link {
+    color: #7f7fe5
+}
+
+.cm-negative {
+    color: #eea1a1
+}
+
+.cm-positive {
+    color: #90cc90
+}
+
+.cm-header, .cm-strong {
+    font-weight: 700
+}
+
+.cm-error {
+    color: #ff7f7f
+}
+
+.cm-invalidchar {
+    color: #ff7f7f
+}
+
+.cm-constant {
+    color: #42b983
+}
+
+.cm-defined {
+    color: #dac37f
+}
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+    color: #7fff7f
+}
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+    color: #ff9090
+}:root {
+    --side-bar-bg-color: #343333;
+    /* --side-bar-bg-color: #fff; */
+    --control-text-color: #ffffff;
+    /* --control-text-color: #777; */
+    /* --select-text-bg-color: hsla(153, 47%, 49%, 0.5); */
+    --select-text-bg-color: hsl(153, 47%, 40%);
+    --select-text-font-color: #fff;
+    --bg-color: #1d1d1d;
+    --item-hover-bg-color: #fff;
 }
 
 /* cyrillic-ext */
@@ -244,12 +387,13 @@ mark .md-meta { color: rgb(0, 0, 0); }
 /* latin-ext */
 /* latin */
 html {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 body {
     font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif !important;
-    color: #34495e;
+    color: #ffffff;
+    background-color: #1f1f1f;
     -webkit-font-smoothing: antialiased;
     line-height: 1.6rem;
     letter-spacing: 0;
@@ -260,16 +404,19 @@ body {
 #write {
     max-width: 860px;
     margin: 0 auto;
-    padding: 20px 30px 100px;
+    padding: 20px 30px 40px 30px;
+    padding-top: 20px;
+    padding-bottom: 100px;
 }
 
 #write p {
+    /* text-indent: 2rem; */
     line-height: 1.6rem;
     word-spacing: .05rem;
 }
 
 #write ol li {
-    text-indent: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 #write > ul:first-child,
@@ -288,7 +435,7 @@ body > *:last-child {
 a {
     color: #42b983;
     font-weight: 600;
-    padding: 0 2px;
+    padding: 0px 2px;
     text-decoration: none;
 }
 
@@ -317,37 +464,32 @@ h6:hover a.anchor {
 
 h1 tt,
 h1 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h2 tt,
 h2 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h3 tt,
 h3 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h4 tt,
 h4 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h5 tt,
 h5 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h6 tt,
 h6 code {
-    font-size: inherit !important;
-}
-
-h2 a,
-h3 a {
-    color: #34495e;
+    font-size: inherit;
 }
 
 h1 {
@@ -359,15 +501,15 @@ h1 {
 h2 {
     font-size: 1.75rem;
     line-height: 1.225;
-    margin: 35px 0 15px;
+    margin: 35px 0px 15px 0px;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid hsl(0, 0%, 20%);
 }
 
 h3 {
     font-size: 1.4rem;
     line-height: 1.43;
-    margin: 20px 0 7px;
+    margin: 20px 0px 7px 0px;
 }
 
 h4 {
@@ -380,7 +522,7 @@ h5 {
 
 h6 {
     font-size: 1rem;
-    color: #777;
+    color: hsl(0, 0%, 53%);
 }
 
 p,
@@ -401,7 +543,7 @@ hr {
     height: 2px;
     padding: 0;
     margin: 16px 0;
-    background-color: #e7e7e7;
+    background-color: hsl(0, 0%, 18%);
     border: 0 none;
     overflow: hidden;
     box-sizing: content-box;
@@ -470,30 +612,34 @@ ol:last-child {
 
 blockquote {
     border-left: 4px solid #42b983;
-    padding: 10px 15px;
-    color: #777;
+    padding: 10px 0px 10px 15px;
+    color: #fff;
     background-color: rgba(66, 185, 131, .1);
 }
 
 table {
+    font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important;
+    font-size: 0.85rem;
     padding: 0;
     word-break: initial;
 }
 
 table tr {
-    border-top: 1px solid #dfe2e5;
+    border-top: 1px solid hsl(210, 10%, 11%);
     margin: 0;
     padding: 0;
 }
 
 table tr:nth-child(2n),
 thead {
-    background-color: #fafafa;
+    /* background-color: hsl(0, 0%, 2%); */
+    background-color: hsl(0, 0%, 10%);
 }
 
 table tr th {
     font-weight: bold;
-    border: 1px solid #dfe2e5;
+    /* border: 1px solid hsl(210, 10%, 11%); */
+    border: transparent;
     border-bottom: 0;
     text-align: left;
     margin: 0;
@@ -501,7 +647,9 @@ table tr th {
 }
 
 table tr td {
-    border: 1px solid #dfe2e5;
+    /* border: 2px solid hsl(210, 10%, 11%); */
+    /* border: 2px solid hsl(0, 0%, 4%); */
+    border: 2px solid #1d1d1d;
     text-align: left;
     margin: 0;
     padding: 6px 13px;
@@ -518,15 +666,16 @@ table tr td:last-child {
 }
 
 #write strong {
-    padding: 0 1px;
+    padding: 0px 1px 0 1px;
 }
 
 #write em {
-    padding: 0 5px 0 2px;
+    padding: 0px 5px 0 2px;
 }
 
 #write table thead th {
-    background-color: #f2f2f2;
+    /* background-color: hsl(0, 0%, 5%); */
+    background-color: hsl(0, 0%, 9%);
 }
 
 #write .CodeMirror-gutters {
@@ -534,14 +683,16 @@ table tr td:last-child {
 }
 
 #write .md-fences {
-    border: 1px solid #F4F4F4;
+    border: 1px solid hsl(0, 0%, 11%);
     -webkit-font-smoothing: initial;
     margin: 0.8rem 0 !important;
-    padding: 0.3rem 0 !important;
+    padding: 0.3rem 0rem !important;
     line-height: 1.43rem;
-    background-color: #F8F8F8 !important;
+    color: hsl(0, 0%, 78%);
+    background-color: hsl(0, 0%, 10%) !important;
     border-radius: 2px;
-    font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
+    font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important;
+    font-weight: bold;
     font-size: 0.85rem;
     word-wrap: normal;
 }
@@ -554,15 +705,16 @@ table tr td:last-child {
     margin: 0 2px;
     padding: 2px 4px;
     border-radius: 2px;
-    font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
-    font-size: 0.92rem;
-    color: #e96900;
-    background-color: #f8f8f8;
+    font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #f3b37f;
+    background-color: hsla(0, 0%, 0%, 0.2);
 }
 
 #write .md-footnote {
-    background-color: #f8f8f8;
-    color: #e96900;
+    background-color: hsla(0, 0%, 0%, 0.2);
+    color: #f3b37f;
 }
 
 /* heighlight. */
@@ -592,6 +744,13 @@ table tr td:last-child {
     margin-left: -1.3em;
 }
 
+@media screen and (min-width: 914px) {
+    /*body {
+        width: 854px;
+        margin: 0 auto;
+    }*/
+}
+
 @media print {
     html {
         font-size: 13px;
@@ -607,18 +766,14 @@ table tr td:last-child {
     }
 }
 
-.md-fences {
-    background-color: #f8f8f8;
-}
-
 #write pre.md-meta-block {
     padding: 1rem;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f7f7f7;
+    background-color: hsl(0, 0%, 3%);
     border: 0;
     border-radius: 3px;
-    color: #777777;
+    color: hsl(0, 0%, 53%);
     margin-top: 0 !important;
 }
 
@@ -649,7 +804,7 @@ table tr td:last-child {
 .md-image > .md-meta {
     border-radius: 3px;
     font-family: Consolas, "Liberation Mono", Courier, monospace;
-    padding: 2px 0 0 4px;
+    padding: 2px 0px 0px 4px;
     font-size: 0.9em;
     color: inherit;
 }
@@ -673,8 +828,8 @@ table tr td:last-child {
 }
 
 #typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    background-color: hsl(0, 0%, 2%);
+    border-color: hsl(0, 0%, 0%) hsl(0, 0%, 10%) hsl(0, 0%, 10%) hsl(0, 0%, 7%);
     border-style: solid;
     border-width: 1px;
 }
@@ -702,23 +857,158 @@ footer {
 }
 
 .mac-seamless-mode #typora-sidebar {
+    background-color: hsl(0, 0%, 2%);
     background-color: var(--side-bar-bg-color);
 }
 
 .md-lang {
-    color: #b4654d;
+    color: #42b983;
 }
 
 .html-for-mac .context-menu {
-    --item-hover-bg-color: #E6F0FE;
+    --item-hover-bg-color: hsl(215, 92%, 5%);
 }
 
+#typora-sidebar {
+    /* font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important; */
+    font-family: Helvetica, Arial !important;
+    font-weight: bold;
+}
+
+.file-list-item-summary{
+    font-family: Helvetica, Arial !important;
+    font-weight: 400;
+}
+
+.file-list-item {
+    border-bottom: 0.15rem solid hsl(0, 0%, 18%);
+}
+
+.file-list-item.active {
+    background: hsl(0, 0%, 15%) !important;
+}
+
+.file-node-background {
+    height: 29px;
+}
+
+#toc-dropmenu {
+    background: hsl(0, 0%, 18%) !important;
+    /* font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important; */
+    font-weight: bold;
+}
+
+#toc-content {
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+}
+
+#toc-content a:hover {
+    text-decoration: none;
+}
+
+.outline-item {
+    /* transition: color 150ms, background-color 150ms; */
+    transition: color 150ms;
+}
+
+.outline-item:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #42b983;
+}
+
+.sidebar-footer {
+    border-top: 2px solid hsl(0, 0%, 15%) !important;
+}
+
+.footer-item:hover, .sidebar-footer-item:hover {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.file-tree-node.active>.file-node-background {
+    background-color: hsl(0, 0%, 15%) !important;
+}
+
+.file-node-content:hover {
+    color: #fff;
+}
+
+html{
+    background: #1f1f1f !important;
+}
+
+.outline-title-wrapper {
+    display: none;
+}
+
+.dropdown-menu .divider {
+    display: none;
+    height: 2px;
+    background-color: hsl(0, 0%, 13%);
+}
+
+.dropdown-menu>li>a {
+    color: #fff;
+}
+
+.autoComplt-hint {
+    color: #42b983 !important;
+    /* border-color: transparent !important */
+}
+
+.auto-suggest-container {
+    color: #42b983 !important;
+    font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important;
+    font-weight: bold !important;
+    border-color: #42b983 !important;
+    border-radius: 8px !important;
+    border-width: 2px !important;
+    margin-top: 5px;
+    overflow: hidden !important;
+    box-shadow: 0 0 1rem hsla(153, 47%, 49%, 0.3);
+}
+
+/* .auto-suggest-container li { */
+    /* transition: all 150ms; */
+    /* text-align: center !important; */
+/* } */
+
+.auto-suggest-container li:hover {
+    color: #fff !important;
+    background-color: #42b983 !important;
+    /* text-align: right !important; */
+}
+
+/* windows */
+/* .modal-dialog { */
+    /* color: #000; */
+/* } */
+
+.typora-sourceview-on #toggle-sourceview-btn{
+    background-color: #42b983
+}
+
+/* cursor */
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    border-left: 5px solid #42b983;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 5px solid #42b983;
+    z-index: 3;
+}
+
+/* selected text */
+/* .CodeMirror-selecte { */
+    /* background-color: hsla(153, 47%, 49%, 0.5) !important; */
+    /* color: #fff !important; */
+/* } */
 
  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}} .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style><title>anti-cancer</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='抗がん剤'><span>抗がん剤</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" style="cursor: pointer;" href="#抗がん剤">抗がん剤</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3"><a class="md-toc-inner" style="cursor: pointer;" href="#命名法">命名法</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n4"><a class="md-toc-inner" style="cursor: pointer;" href="#モノクローナル抗体-mabmonoclonal-antibodies">モノクローナル抗体(-mab：monoclonal antibodies)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n23"><a class="md-toc-inner" style="cursor: pointer;" href="#分子標的薬-ibsmall-molecule-inhibitors">分子標的薬(-ib：small molecule inhibitors)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n53"><a class="md-toc-inner" style="cursor: pointer;" href="#receptor-fusion-proteins-cept">Receptor fusion proteins(-cept)</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n63"><a class="md-toc-inner" style="cursor: pointer;" href="#細胞障害性抗癌薬">細胞障害性抗癌薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n64"><a class="md-toc-inner" style="cursor: pointer;" href="#アントラサイクリン・アントラキノン系">アントラサイクリン・アントラキノン系</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n75"><a class="md-toc-inner" style="cursor: pointer;" href="#アルキル化剤">アルキル化剤</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n83"><a class="md-toc-inner" style="cursor: pointer;" href="#トポイソメラーゼii阻害薬">トポイソメラーゼII阻害薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n93"><a class="md-toc-inner" style="cursor: pointer;" href="#カンプトテシン誘導体">カンプトテシン誘導体</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n101"><a class="md-toc-inner" style="cursor: pointer;" href="#白金化合物">白金化合物</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n109"><a class="md-toc-inner" style="cursor: pointer;" href="#ピリミジン拮抗薬">ピリミジン拮抗薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n123"><a class="md-toc-inner" style="cursor: pointer;" href="#葉酸拮抗薬">葉酸拮抗薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n134"><a class="md-toc-inner" style="cursor: pointer;" href="#ビンカアルカロイド">ビンカアルカロイド</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n142"><a class="md-toc-inner" style="cursor: pointer;" href="#タキサン">タキサン</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n197"><a class="md-toc-inner" style="cursor: pointer;" href="#プリン代謝阻害薬">プリン代謝阻害薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n154"><a class="md-toc-inner" style="cursor: pointer;" href="#その他">その他</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n162"><a class="md-toc-inner" style="cursor: pointer;" href="#分子標的薬">分子標的薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n163"><a class="md-toc-inner" style="cursor: pointer;" href="#チロシンキナーゼ阻害薬tki">チロシンキナーゼ阻害薬(TKI)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n164"><a class="md-toc-inner" style="cursor: pointer;" href="#egfr">EGFR</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n173"><a class="md-toc-inner" style="cursor: pointer;" href="#alk">ALK</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n181"><a class="md-toc-inner" style="cursor: pointer;" href="#ros1">ROS1</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n189"><a class="md-toc-inner" style="cursor: pointer;" href="#セリンスレオニンキナーゼ阻害薬">セリン/スレオニンキナーゼ阻害薬</a></span></p></div><h2 id='命名法'><span>命名法</span></h2><h3 id='モノクローナル抗体-mabmonoclonal-antibodies'><span>モノクローナル抗体(-mab：monoclonal antibodies)</span></h3><figure><table><thead><tr><th><span>接尾語</span></th><th><span>意味</span></th><th><span>例</span></th></tr></thead><tbody><tr><td><span>-</span><strong><span>xi</span></strong><span>mab</span></td><td><strong><span>Chi</span></strong><span>meric human-mouse monoclonal antibody(キメラ抗体)</span></td><td><span>Rituximab</span></td></tr><tr><td><span>-</span><strong><span>zu</span></strong><span>mab</span></td><td><span>H</span><strong><span>u</span></strong><span>mani</span><strong><span>z</span></strong><span>ed monoclonal antibody(ヒト化抗体)</span></td><td><span>Bevacizumab</span></td></tr><tr><td><span>-</span><strong><span>u</span></strong><span>mab</span></td><td><span>H</span><strong><span>u</span></strong><span>man monoclonal antibody(ヒト抗体)</span></td><td><span>Denosumab</span></td></tr></tbody></table></figure><p><span>医薬品としてのモノクローナル抗体には、マウス抗体、キメラ抗体、ヒト化抗体、完全ヒト抗体がある。</span>
+<div id='write'  class=''><h1 id='抗がん剤'><span>抗がん剤</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" style="cursor: pointer;" href="#抗がん剤">抗がん剤</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3"><a class="md-toc-inner" style="cursor: pointer;" href="#命名法">命名法</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n4"><a class="md-toc-inner" style="cursor: pointer;" href="#モノクローナル抗体-mabmonoclonal-antibodies">モノクローナル抗体(-mab：monoclonal antibodies)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n23"><a class="md-toc-inner" style="cursor: pointer;" href="#分子標的薬-ibsmall-molecule-inhibitors">分子標的薬(-ib：small molecule inhibitors)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n53"><a class="md-toc-inner" style="cursor: pointer;" href="#receptor-fusion-proteins-cept">Receptor fusion proteins(-cept)</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n63"><a class="md-toc-inner" style="cursor: pointer;" href="#細胞障害性抗癌薬">細胞障害性抗癌薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n64"><a class="md-toc-inner" style="cursor: pointer;" href="#アントラサイクリン・アントラキノン系">アントラサイクリン・アントラキノン系</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n75"><a class="md-toc-inner" style="cursor: pointer;" href="#アルキル化剤">アルキル化剤</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n83"><a class="md-toc-inner" style="cursor: pointer;" href="#トポイソメラーゼii阻害薬">トポイソメラーゼII阻害薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n93"><a class="md-toc-inner" style="cursor: pointer;" href="#カンプトテシン誘導体">カンプトテシン誘導体</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n101"><a class="md-toc-inner" style="cursor: pointer;" href="#白金化合物">白金化合物</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n109"><a class="md-toc-inner" style="cursor: pointer;" href="#ピリミジン拮抗薬">ピリミジン拮抗薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n123"><a class="md-toc-inner" style="cursor: pointer;" href="#葉酸拮抗薬">葉酸拮抗薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n134"><a class="md-toc-inner" style="cursor: pointer;" href="#ビンカアルカロイド">ビンカアルカロイド</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n142"><a class="md-toc-inner" style="cursor: pointer;" href="#タキサン">タキサン</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n154"><a class="md-toc-inner" style="cursor: pointer;" href="#プリン代謝阻害薬">プリン代謝阻害薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n162"><a class="md-toc-inner" style="cursor: pointer;" href="#その他">その他</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n170"><a class="md-toc-inner" style="cursor: pointer;" href="#分子標的薬">分子標的薬</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n171"><a class="md-toc-inner" style="cursor: pointer;" href="#チロシンキナーゼ阻害薬tki">チロシンキナーゼ阻害薬(TKI)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n172"><a class="md-toc-inner" style="cursor: pointer;" href="#egfr">EGFR</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n181"><a class="md-toc-inner" style="cursor: pointer;" href="#alk">ALK</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n189"><a class="md-toc-inner" style="cursor: pointer;" href="#ros1">ROS1</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n197"><a class="md-toc-inner" style="cursor: pointer;" href="#セリンスレオニンキナーゼ阻害薬">セリン/スレオニンキナーゼ阻害薬</a></span></p></div><h2 id='命名法'><span>命名法</span></h2><h3 id='モノクローナル抗体-mabmonoclonal-antibodies'><span>モノクローナル抗体(-mab：monoclonal antibodies)</span></h3><figure><table><thead><tr><th><span>接尾語</span></th><th><span>意味</span></th><th><span>例</span></th></tr></thead><tbody><tr><td><span>-</span><strong><span>xi</span></strong><span>mab</span></td><td><strong><span>Chi</span></strong><span>meric human-mouse monoclonal antibody(キメラ抗体)</span></td><td><span>Rituximab</span></td></tr><tr><td><span>-</span><strong><span>zu</span></strong><span>mab</span></td><td><span>H</span><strong><span>u</span></strong><span>mani</span><strong><span>z</span></strong><span>ed monoclonal antibody(ヒト化抗体)</span></td><td><span>Bevacizumab</span></td></tr><tr><td><span>-</span><strong><span>u</span></strong><span>mab</span></td><td><span>H</span><strong><span>u</span></strong><span>man monoclonal antibody(ヒト抗体)</span></td><td><span>Denosumab</span></td></tr></tbody></table></figure><p><span>医薬品としてのモノクローナル抗体には、マウス抗体、キメラ抗体、ヒト化抗体、完全ヒト抗体がある。</span>
 <span>マウス抗体はマウスの抗体であるため、ヒトの体内に入ると異物と認識されてアレルギー反応を起こしたり、効果が弱まったりする。</span>
 <span>そのため、ヒトの抗体に近い方がより安全性が高いと考えられ研究が進められてきた。遺伝子工学の手法を用いて、抗原に結合する先端の部分だけマウスの抗体を残して、残りはヒトの抗体に変えたキメラ抗体やヒト化抗体が開発され、抗体は医薬品として使えるようになった。</span>
 <span>また、ヒトの抗体を作るマウスや、多種類のヒトの抗体を人工的に作り出し、そこから目的の抗体を選択する技術が研究されてきた。</span></p><h3 id='分子標的薬-ibsmall-molecule-inhibitors'><span>分子標的薬(-ib：small molecule inhibitors)</span></h3><figure><table><thead><tr><th><span>接尾語</span></th><th><span>意味</span></th><th><span>例</span></th></tr></thead><tbody><tr><td><span>-</span><strong><span>cicl</span></strong><span>ib</span></td><td><strong><span>Cycl</span></strong><span>in-dependent kinase inhibitor</span></td><td><span>Pallociclib</span></td></tr><tr><td><span>-</span><strong><span>cox</span></strong><span>ib</span></td><td><strong><span>COX</span></strong><span>-2 inhibitor</span></td><td><span>Celecxib</span></td></tr><tr><td><span>-</span><strong><span>par</span></strong><span>ib</span></td><td><strong><span>P</span></strong><span>oly(</span><strong><span>A</span></strong><span>DP-</span><strong><span>r</span></strong><span>ibose) polymerase inhibitor</span></td><td><span>Olaparib</span></td></tr><tr><td><span>-</span><strong><span>raf</span></strong><span>enib</span></td><td><span>B</span><strong><span>RAF</span></strong><span> inhibitor</span></td><td><span>Vemurafenib</span></td></tr><tr><td><span>-</span><strong><span>tin</span></strong><span>ib</span></td><td><strong><span>T</span></strong><span>yrosine k</span><strong><span>in</span></strong><span>ase inhibitor</span></td><td><span>Imatinib</span></td></tr><tr><td><span>-</span><strong><span>zom</span></strong><span>ib</span></td><td><span>Protea</span><strong><span>som</span></strong><span>e inihibitor</span></td><td><span>Bortezomib</span></td></tr></tbody></table></figure><h3 id='receptor-fusion-proteins-cept'><span>Receptor fusion proteins(-cept)</span></h3><figure><table><thead><tr><th><span>接尾語</span></th><th><span>意味</span></th><th><span>例</span></th></tr></thead><tbody><tr><td><span>-cept</span></td><td><span>TNF-α antagonist</span></td><td><span>Etanercept</span></td></tr></tbody></table></figure><h2 id='細胞障害性抗癌薬'><span>細胞障害性抗癌薬</span></h2><h3 id='アントラサイクリン・アントラキノン系'><span>アントラサイクリン・アントラキノン系</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>ダウノルビシン</span></td><td><strong><span>心毒性</span></strong><span>、骨髄抑制、粘膜障害、脱毛</span></td></tr><tr><td><span>ドキソルビシン(アドリアマイシン)</span></td><td><strong><span>心毒性</span></strong><span>、骨髄抑制、粘膜障害、脱毛</span><br><span>薬の色が赤色のため、注射後1〜2日は尿が赤くなる</span></td></tr></tbody></table></figure><h3 id='アルキル化剤'><span>アルキル化剤</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>シクロホスファミド(エンドキサン®)</span></td><td><strong><span>出血性膀胱炎</span></strong><span>、骨髄抑制、脱毛、間質性肺炎</span></td></tr></tbody></table></figure><h3 id='トポイソメラーゼii阻害薬'><span>トポイソメラーゼII阻害薬</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>エトポシド</span></td><td><strong><span>白血病</span></strong></td></tr></tbody></table></figure><p><span>アルキル化剤や放射線療法後に起こる白血病や骨髄異形成症候群は，治療開始から5～7年経過してから発症することが多く，骨髄異形成症候群を経て急性骨髄性白血病になるという特徴があり，染色体異常は-5/5qや-7/7q-が多い．</span></p><p><span>一方，トポイソメラーゼⅡ阻害薬（etoposideなど）による二次性白血病は治療開始から2～3年後に骨髄異形成症候群を経ずに直接急性骨髄性白血病として発症し，11q21部染色体異常を含む場合が多い．二次性白血病は，骨髄性がほとんどで，リンパ性はまれである．</span></p><h3 id='カンプトテシン誘導体'><span>カンプトテシン誘導体</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>イリノテカン(オニバイド®)</span></td><td><strong><span>下痢</span></strong><span>、骨髄毒性</span></td></tr></tbody></table></figure><h3 id='白金化合物'><span>白金化合物</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>シスプラチン</span></td><td><strong><span>腎毒性</span></strong><span>、低マグネシウム血症、内耳障害、悪心嘔吐</span></td></tr></tbody></table></figure><h3 id='ピリミジン拮抗薬'><span>ピリミジン拮抗薬</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>シタラビン(キロサイド®)</span></td><td>&nbsp;</td></tr><tr><td><span>ゲムシタビン</span></td><td>&nbsp;</td></tr><tr><td><span>5-フルオロウラシル(5-FU)</span></td><td>&nbsp;</td></tr></tbody></table></figure><h3 id='葉酸拮抗薬'><span>葉酸拮抗薬</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>メトトレキサート</span></td><td><strong><span>間質性肺炎</span></strong><span>、</span><strong><span>口腔粘膜潰瘍</span></strong><span>、肝障害、</span><strong><span>リンパ増殖性疾患</span></strong></td></tr><tr><td><span>ペメトレキセド(アリムタ®)</span></td><td>&nbsp;</td></tr></tbody></table></figure><h3 id='ビンカアルカロイド'><span>ビンカアルカロイド</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>ビンクリスチン</span></td><td><strong><span>末梢神経障害</span></strong><span>、脱毛、腸閉塞、SIADH</span></td></tr></tbody></table></figure><h3 id='タキサン'><span>タキサン</span></h3><figure><table><thead><tr><th><span>薬品名</span></th><th><span>副作用</span></th></tr></thead><tbody><tr><td><span>パクリタキセル(タキソール®、アブラキサン®)</span></td><td><strong><span>末梢神経障害</span></strong></td></tr><tr><td><span>ドセタキセル</span></td><td>&nbsp;</td></tr></tbody></table></figure><p><span>パクリタキセルは水にほとんど溶けないため、タキソール®ではエタノールに溶解されている。</span>
