@@ -293,9 +293,151 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 
-:root {
-    --side-bar-bg-color: #fff;
-    --control-text-color: #777;
+/* 注：感谢：MamoruDS, 这个文件的大部分内容来自 https://github.com/MamoruDS/typora-vue-dark-theme. */
+
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    background: #555;
+    color: #fff;
+}
+
+.md-rawblock-on-edit>.md-rawblock-tooltip, .md-rawblock:hover>.md-rawblock-container, .md-rawblock:hover>.md-rawblock-tooltip {
+    background: #555;
+    color: #fff;
+}
+
+/* code color */
+.cm-s-inner .cm-keyword {
+    color: #bb7fc3
+}
+
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom {
+    color: #9088cc
+}
+
+.cm-s-inner .cm-number {
+    color: #88b2a1
+}
+
+.cm-s-inner .cm-def {
+    color: #7f7fff
+}
+
+.cm-s-inner .cm-variable {
+    color: #efefef
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #7faad4
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #7fc3aa
+}
+
+.cm-s-inner .cm-string {
+    color: #d48888
+}
+
+.cm-s-inner .cm-property {
+    color: #efefef
+}
+
+.cm-s-inner .cm-operator {
+    color: #cb8c8c
+}
+
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment {
+    color: hsl(0, 0%, 35%)
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #ffaa7f
+}
+
+.cm-s-inner .cm-meta {
+    color: hsl(0, 0%, 33%)
+}
+
+.cm-s-inner .cm-qualifier {
+    color: hsl(0, 0%, 33%)
+}
+
+.cm-s-inner .cm-builtin {
+    color: #997fd4
+}
+
+.cm-s-inner .cm-bracket {
+    color: #ccccbb
+}
+
+.cm-s-inner .cm-tag {
+    color: #88bb7f
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7f7fe5
+}
+
+.cm-s-inner .cm-header, .cm-s-inner.cm-header {
+    color: #7f7fff
+}
+
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote {
+    color: #7fcc7f
+}
+
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr {
+    color: hsl(0, 0%, 60%)
+}
+
+.cm-s-inner .cm-link, .cm-s-inner.cm-link {
+    color: #7f7fe5
+}
+
+.cm-negative {
+    color: #eea1a1
+}
+
+.cm-positive {
+    color: #90cc90
+}
+
+.cm-header, .cm-strong {
+    font-weight: 700
+}
+
+.cm-error {
+    color: #ff7f7f
+}
+
+.cm-invalidchar {
+    color: #ff7f7f
+}
+
+.cm-constant {
+    color: #42b983
+}
+
+.cm-defined {
+    color: #dac37f
+}
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+    color: #7fff7f
+}
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+    color: #ff9090
+}:root {
+    --side-bar-bg-color: #343333;
+    /* --side-bar-bg-color: #fff; */
+    --control-text-color: #ffffff;
+    /* --control-text-color: #777; */
+    /* --select-text-bg-color: hsla(153, 47%, 49%, 0.5); */
+    --select-text-bg-color: hsl(153, 47%, 40%);
+    --select-text-font-color: #fff;
+    --bg-color: #1d1d1d;
+    --item-hover-bg-color: #fff;
 }
 
 /* cyrillic-ext */
@@ -327,12 +469,13 @@ span.cm-strikethrough { text-decoration: line-through; }
 /* latin-ext */
 /* latin */
 html {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 body {
     font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif !important;
-    color: #34495e;
+    color: #ffffff;
+    background-color: #1f1f1f;
     -webkit-font-smoothing: antialiased;
     line-height: 1.6rem;
     letter-spacing: 0;
@@ -343,16 +486,19 @@ body {
 #write {
     max-width: 860px;
     margin: 0 auto;
-    padding: 20px 30px 100px;
+    padding: 20px 30px 40px 30px;
+    padding-top: 20px;
+    padding-bottom: 100px;
 }
 
 #write p {
+    /* text-indent: 2rem; */
     line-height: 1.6rem;
     word-spacing: .05rem;
 }
 
 #write ol li {
-    text-indent: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 #write > ul:first-child,
@@ -371,7 +517,7 @@ body > *:last-child {
 a {
     color: #42b983;
     font-weight: 600;
-    padding: 0 2px;
+    padding: 0px 2px;
     text-decoration: none;
 }
 
@@ -400,37 +546,32 @@ h6:hover a.anchor {
 
 h1 tt,
 h1 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h2 tt,
 h2 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h3 tt,
 h3 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h4 tt,
 h4 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h5 tt,
 h5 code {
-    font-size: inherit !important;
+    font-size: inherit;
 }
 
 h6 tt,
 h6 code {
-    font-size: inherit !important;
-}
-
-h2 a,
-h3 a {
-    color: #34495e;
+    font-size: inherit;
 }
 
 h1 {
@@ -442,15 +583,15 @@ h1 {
 h2 {
     font-size: 1.75rem;
     line-height: 1.225;
-    margin: 35px 0 15px;
+    margin: 35px 0px 15px 0px;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid hsl(0, 0%, 20%);
 }
 
 h3 {
     font-size: 1.4rem;
     line-height: 1.43;
-    margin: 20px 0 7px;
+    margin: 20px 0px 7px 0px;
 }
 
 h4 {
@@ -463,7 +604,7 @@ h5 {
 
 h6 {
     font-size: 1rem;
-    color: #777;
+    color: hsl(0, 0%, 53%);
 }
 
 p,
@@ -484,7 +625,7 @@ hr {
     height: 2px;
     padding: 0;
     margin: 16px 0;
-    background-color: #e7e7e7;
+    background-color: hsl(0, 0%, 18%);
     border: 0 none;
     overflow: hidden;
     box-sizing: content-box;
@@ -553,30 +694,34 @@ ol:last-child {
 
 blockquote {
     border-left: 4px solid #42b983;
-    padding: 10px 15px;
-    color: #777;
+    padding: 10px 0px 10px 15px;
+    color: #fff;
     background-color: rgba(66, 185, 131, .1);
 }
 
 table {
+    font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important;
+    font-size: 0.85rem;
     padding: 0;
     word-break: initial;
 }
 
 table tr {
-    border-top: 1px solid #dfe2e5;
+    border-top: 1px solid hsl(210, 10%, 11%);
     margin: 0;
     padding: 0;
 }
 
 table tr:nth-child(2n),
 thead {
-    background-color: #fafafa;
+    /* background-color: hsl(0, 0%, 2%); */
+    background-color: hsl(0, 0%, 10%);
 }
 
 table tr th {
     font-weight: bold;
-    border: 1px solid #dfe2e5;
+    /* border: 1px solid hsl(210, 10%, 11%); */
+    border: transparent;
     border-bottom: 0;
     text-align: left;
     margin: 0;
@@ -584,7 +729,9 @@ table tr th {
 }
 
 table tr td {
-    border: 1px solid #dfe2e5;
+    /* border: 2px solid hsl(210, 10%, 11%); */
+    /* border: 2px solid hsl(0, 0%, 4%); */
+    border: 2px solid #1d1d1d;
     text-align: left;
     margin: 0;
     padding: 6px 13px;
@@ -601,15 +748,16 @@ table tr td:last-child {
 }
 
 #write strong {
-    padding: 0 1px;
+    padding: 0px 1px 0 1px;
 }
 
 #write em {
-    padding: 0 5px 0 2px;
+    padding: 0px 5px 0 2px;
 }
 
 #write table thead th {
-    background-color: #f2f2f2;
+    /* background-color: hsl(0, 0%, 5%); */
+    background-color: hsl(0, 0%, 9%);
 }
 
 #write .CodeMirror-gutters {
@@ -617,14 +765,16 @@ table tr td:last-child {
 }
 
 #write .md-fences {
-    border: 1px solid #F4F4F4;
+    border: 1px solid hsl(0, 0%, 11%);
     -webkit-font-smoothing: initial;
     margin: 0.8rem 0 !important;
-    padding: 0.3rem 0 !important;
+    padding: 0.3rem 0rem !important;
     line-height: 1.43rem;
-    background-color: #F8F8F8 !important;
+    color: hsl(0, 0%, 78%);
+    background-color: hsl(0, 0%, 10%) !important;
     border-radius: 2px;
-    font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
+    font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important;
+    font-weight: bold;
     font-size: 0.85rem;
     word-wrap: normal;
 }
@@ -637,15 +787,16 @@ table tr td:last-child {
     margin: 0 2px;
     padding: 2px 4px;
     border-radius: 2px;
-    font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
-    font-size: 0.92rem;
-    color: #e96900;
-    background-color: #f8f8f8;
+    font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #f3b37f;
+    background-color: hsla(0, 0%, 0%, 0.2);
 }
 
 #write .md-footnote {
-    background-color: #f8f8f8;
-    color: #e96900;
+    background-color: hsla(0, 0%, 0%, 0.2);
+    color: #f3b37f;
 }
 
 /* heighlight. */
@@ -675,6 +826,13 @@ table tr td:last-child {
     margin-left: -1.3em;
 }
 
+@media screen and (min-width: 914px) {
+    /*body {
+        width: 854px;
+        margin: 0 auto;
+    }*/
+}
+
 @media print {
     html {
         font-size: 13px;
@@ -690,18 +848,14 @@ table tr td:last-child {
     }
 }
 
-.md-fences {
-    background-color: #f8f8f8;
-}
-
 #write pre.md-meta-block {
     padding: 1rem;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f7f7f7;
+    background-color: hsl(0, 0%, 3%);
     border: 0;
     border-radius: 3px;
-    color: #777777;
+    color: hsl(0, 0%, 53%);
     margin-top: 0 !important;
 }
 
@@ -732,7 +886,7 @@ table tr td:last-child {
 .md-image > .md-meta {
     border-radius: 3px;
     font-family: Consolas, "Liberation Mono", Courier, monospace;
-    padding: 2px 0 0 4px;
+    padding: 2px 0px 0px 4px;
     font-size: 0.9em;
     color: inherit;
 }
@@ -756,8 +910,8 @@ table tr td:last-child {
 }
 
 #typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    background-color: hsl(0, 0%, 2%);
+    border-color: hsl(0, 0%, 0%) hsl(0, 0%, 10%) hsl(0, 0%, 10%) hsl(0, 0%, 7%);
     border-style: solid;
     border-width: 1px;
 }
@@ -785,17 +939,152 @@ footer {
 }
 
 .mac-seamless-mode #typora-sidebar {
+    background-color: hsl(0, 0%, 2%);
     background-color: var(--side-bar-bg-color);
 }
 
 .md-lang {
-    color: #b4654d;
+    color: #42b983;
 }
 
 .html-for-mac .context-menu {
-    --item-hover-bg-color: #E6F0FE;
+    --item-hover-bg-color: hsl(215, 92%, 5%);
 }
 
+#typora-sidebar {
+    /* font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important; */
+    font-family: Helvetica, Arial !important;
+    font-weight: bold;
+}
+
+.file-list-item-summary{
+    font-family: Helvetica, Arial !important;
+    font-weight: 400;
+}
+
+.file-list-item {
+    border-bottom: 0.15rem solid hsl(0, 0%, 18%);
+}
+
+.file-list-item.active {
+    background: hsl(0, 0%, 15%) !important;
+}
+
+.file-node-background {
+    height: 29px;
+}
+
+#toc-dropmenu {
+    background: hsl(0, 0%, 18%) !important;
+    /* font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important; */
+    font-weight: bold;
+}
+
+#toc-content {
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+}
+
+#toc-content a:hover {
+    text-decoration: none;
+}
+
+.outline-item {
+    /* transition: color 150ms, background-color 150ms; */
+    transition: color 150ms;
+}
+
+.outline-item:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #42b983;
+}
+
+.sidebar-footer {
+    border-top: 2px solid hsl(0, 0%, 15%) !important;
+}
+
+.footer-item:hover, .sidebar-footer-item:hover {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.file-tree-node.active>.file-node-background {
+    background-color: hsl(0, 0%, 15%) !important;
+}
+
+.file-node-content:hover {
+    color: #fff;
+}
+
+html{
+    background: #1f1f1f !important;
+}
+
+.outline-title-wrapper {
+    display: none;
+}
+
+.dropdown-menu .divider {
+    display: none;
+    height: 2px;
+    background-color: hsl(0, 0%, 13%);
+}
+
+.dropdown-menu>li>a {
+    color: #fff;
+}
+
+.autoComplt-hint {
+    color: #42b983 !important;
+    /* border-color: transparent !important */
+}
+
+.auto-suggest-container {
+    color: #42b983 !important;
+    font-family: Menlo, Source Sans Pro, Monaco, courier, monospace !important;
+    font-weight: bold !important;
+    border-color: #42b983 !important;
+    border-radius: 8px !important;
+    border-width: 2px !important;
+    margin-top: 5px;
+    overflow: hidden !important;
+    box-shadow: 0 0 1rem hsla(153, 47%, 49%, 0.3);
+}
+
+/* .auto-suggest-container li { */
+    /* transition: all 150ms; */
+    /* text-align: center !important; */
+/* } */
+
+.auto-suggest-container li:hover {
+    color: #fff !important;
+    background-color: #42b983 !important;
+    /* text-align: right !important; */
+}
+
+/* windows */
+/* .modal-dialog { */
+    /* color: #000; */
+/* } */
+
+.typora-sourceview-on #toggle-sourceview-btn{
+    background-color: #42b983
+}
+
+/* cursor */
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    border-left: 5px solid #42b983;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 5px solid #42b983;
+    z-index: 3;
+}
+
+/* selected text */
+/* .CodeMirror-selecte { */
+    /* background-color: hsla(153, 47%, 49%, 0.5) !important; */
+    /* color: #fff !important; */
+/* } */
 
 
 mjx-container[jax="SVG"] {
@@ -989,9 +1278,9 @@ mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
 <span>その結果、P波は色々な形を取り、移動のたびにPP間隔、PQ時間が変化する。PQ時間が変わるのは、刺激発生部位から房室結節への距離が異なるためである。</span></p><p><span>正常人でも起こりうるもので病的意義はない。迷走神経緊張時や、ジギタリスが原因となることもある。また、器質的な心疾患やリウマチ熱罹患時にも起こることがある。</span></p><p><img src="ECG.assets/image-20210301210654905.png" alt="image-20210301210654905" style="zoom:23%;" /></p></blockquote><h2 id='心房細動-afatrial-fibrillation'><span>心房細動 (AF：Atrial Fibrillation)</span></h2><ul><li><span>初発心房細動 - 心電図で初めて確認されたもの</span></li><li><span>発作性心房細動 - 7日間以内(24時間以内に自然停止することが多い)に自然停止するもの</span></li><li><span>持続性心房細動 - 7日以上続き薬剤や電気的除細動で停止するもの</span></li><li><span>永続性心房細動 - 停止しないもの</span></li></ul><p><span>心電図の特徴としては</span></p><ol start='' ><li><span>P波の消失</span></li><li><span>細動波(f波)</span></li><li><span>絶対性不整脈(QRS波が不規則に出現)</span></li></ol><blockquote><p><strong><span>特殊な心房細動</span></strong></p><p><u><span>細動波の不明瞭な例</span></u>
 <span>心房細動の病歴が長くなるとf波は徐々に減高する。細動波がはっきりしない場合には洞停止や接合部調律との鑑別を要するが、絶対性不整脈を呈することから診断可能。</span></p><p><img src="心電図.assets/image-20201229104121211.png" alt="image-20201229104121211" style="zoom:45%;" /></p><p><u><span>R-R間隔に不整を認めない例</span></u>
 <span>心房細動に完全房室ブロックを合併すると生じる。ジギタリスやβ遮断薬投与中の患者で起こることもある。</span>
-<span>徐脈になることが多い。</span></p><p><img src="心電図.assets/image-20201229104236340.png" alt="image-20201229104236340" style="zoom:45%;" /></p></blockquote><h2 id='qrs波の異常'><span>QRS波の異常</span></h2><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="496" style="max-width: 526.23046875px;" viewBox="0 0 526.23046875 496"><style>#mermaidChart0 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart0 .error-icon{fill:#552222;}#mermaidChart0 .error-text{fill:#552222;stroke:#552222;}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#333333;stroke:#333333;}#mermaidChart0 .marker.cross{stroke:#333333;}#mermaidChart0 svg{font-family:sans-serif;font-size:16px;}#mermaidChart0 .label{font-family:sans-serif;color:#333;}#mermaidChart0 .cluster-label text{fill:#333;}#mermaidChart0 .cluster-label span{color:#333;}#mermaidChart0 .label text,#mermaidChart0 span{fill:#333;color:#333;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart0 .node .label{text-align:center;}#mermaidChart0 .node.clickable{cursor:pointer;}#mermaidChart0 .arrowheadPath{fill:#333333;}#mermaidChart0 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart0 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart0 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart0 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart0 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart0 .cluster text{fill:#333;}#mermaidChart0 .cluster span{color:#333;}#mermaidChart0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart0 :root{--mermaid-font-family:sans-serif;}#mermaidChart0 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M207.66796875,48L207.66796875,83L207.66796875,118" marker-end="url(#arrowhead32)" style="fill:none"></path><defs><marker id="arrowhead32" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-B LE-C" id="L-B-C" style="opacity: 1;"><path class="path" d="M167.78870738636363,158L98,193L98,228" marker-end="url(#arrowhead33)" style=" stroke-width: 3.5px;fill:none"></path><defs><marker id="arrowhead33" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-B LE-D" id="L-B-D" style="opacity: 1;"><path class="path" d="M247.54723011363637,158L317.3359375,193L317.3359375,228" marker-end="url(#arrowhead34)" style="fill:none"></path><defs><marker id="arrowhead34" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-D LE-E" id="L-D-E" style="opacity: 1;"><path class="path" d="M282.4651988636364,268L221.44140625,303L221.44140625,338" marker-end="url(#arrowhead35)" style=" stroke-width: 3.5px;fill:none"></path><defs><marker id="arrowhead35" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-D LE-F" id="L-D-F" style="opacity: 1;"><path class="path" d="M352.2066761363636,268L413.23046875,303L413.23046875,338" marker-end="url(#arrowhead36)" style="fill:none"></path><defs><marker id="arrowhead36" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-F LE-G" id="L-F-G" style="opacity: 1;"><path class="path" d="M387.4122869318182,378L342.23046875,413L342.23046875,448" marker-end="url(#arrowhead37)" style=" stroke-width: 3.5px;fill:none"></path><defs><marker id="arrowhead37" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-F LE-H" id="L-F-H" style="opacity: 1;"><path class="path" d="M439.0486505681818,378L484.23046875,413L484.23046875,448" marker-end="url(#arrowhead38)" style="fill:none"></path><defs><marker id="arrowhead38" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(207.66796875,83)" style="opacity: 1;"><g transform="translate(-12.453125,-10)" class="label"><rect rx="0" ry="0" width="24.90625" height="20"></rect><foreignObject width="24.90625" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(98,193)" style="opacity: 1;"><g transform="translate(-12.453125,-10)" class="label"><rect rx="0" ry="0" width="24.90625" height="20"></rect><foreignObject width="24.90625" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-C" class="edgeLabel L-LS-B' L-LE-C">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(317.3359375,193)" style="opacity: 1;"><g transform="translate(-8.8984375,-10)" class="label"><rect rx="0" ry="0" width="17.796875" height="20"></rect><foreignObject width="17.796875" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-D" class="edgeLabel L-LS-B' L-LE-D">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(221.44140625,303)" style="opacity: 1;"><g transform="translate(-12.453125,-10)" class="label"><rect rx="0" ry="0" width="24.90625" height="20"></rect><foreignObject width="24.90625" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-D-E" class="edgeLabel L-LS-D' L-LE-E">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(413.23046875,303)" style="opacity: 1;"><g transform="translate(-8.8984375,-10)" class="label"><rect rx="0" ry="0" width="17.796875" height="20"></rect><foreignObject width="17.796875" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-D-F" class="edgeLabel L-LS-D' L-LE-F">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(342.23046875,413)" style="opacity: 1;"><g transform="translate(-12.453125,-10)" class="label"><rect rx="0" ry="0" width="24.90625" height="20"></rect><foreignObject width="24.90625" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-F-G" class="edgeLabel L-LS-F' L-LE-G">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(484.23046875,413)" style="opacity: 1;"><g transform="translate(-8.8984375,-10)" class="label"><rect rx="0" ry="0" width="17.796875" height="20"></rect><foreignObject width="17.796875" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-F-H" class="edgeLabel L-LS-F' L-LE-H">no</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-14" transform="translate(207.66796875,28)" style="opacity: 1;"><rect rx="0" ry="0" x="-98" y="-20" width="196" height="40" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-88,-10)"><foreignObject width="176" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">基本調律が洞調律である</div></foreignObject></g></g></g><g class="node default" id="flowchart-B-15" transform="translate(207.66796875,138)" style="opacity: 1;"><rect rx="0" ry="0" x="-56.8671875" y="-20" width="113.734375" height="40" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-46.8671875,-10)"><foreignObject width="93.734375" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">早期P'波あり</div></foreignObject></g></g></g><g class="node default" id="flowchart-C-17" transform="translate(98,248)" style="opacity: 1;"><rect rx="0" ry="0" x="-90" y="-20" width="180" height="40" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-80,-10)"><foreignObject width="160" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">非伝導性上室期外収縮</div></foreignObject></g></g></g><g class="node default" id="flowchart-D-19" transform="translate(317.3359375,248)" style="opacity: 1;"><rect rx="0" ry="0" x="-79.3359375" y="-20" width="158.671875" height="40" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-69.3359375,-10)"><foreignObject width="138.671875" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">P波が規則的である</div></foreignObject></g></g></g><g class="node default" id="flowchart-E-21" transform="translate(221.44140625,358)" style="opacity: 1;"><rect rx="0" ry="0" x="-70.453125" y="-20" width="140.90625" height="40" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-60.453125,-10)"><foreignObject width="120.90625" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">2度房室ブロック</div></foreignObject></g></g></g><g class="node default" id="flowchart-F-23" transform="translate(413.23046875,358)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.3359375" y="-20" width="142.671875" height="40" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.3359375,-10)"><foreignObject width="122.671875" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">P-P間隔が整数倍</div></foreignObject></g></g></g><g class="node default" id="flowchart-G-25" transform="translate(342.23046875,468)" style="opacity: 1;"><rect rx="0" ry="0" x="-58" y="-20" width="116" height="40" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48,-10)"><foreignObject width="96" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">洞房ブロック</div></foreignObject></g></g></g><g class="node default" id="flowchart-H-27" transform="translate(484.23046875,468)" style="opacity: 1;"><rect rx="0" ry="0" x="-34" y="-20" width="68" height="40" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-24,-10)"><foreignObject width="48" height="20"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">洞停止</div></foreignObject></g></g></g></g></g></g></svg></div><h3 id='洞停止'><span>洞停止</span></h3><p><span>同結節の器質的障害や種々の外因から同結節の自動能が要請され、洞結節に電気的興奮が発生しない状態。</span>
+<span>徐脈になることが多い。</span></p><p><img src="心電図.assets/image-20201229104236340.png" alt="image-20201229104236340" style="zoom:45%;" /></p></blockquote><h2 id='qrs波の異常'><span>QRS波の異常</span></h2><div class="md-diagram-panel md-fences-adv-panel"><svg id="mermaidChart2" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="514" style="max-width: 526.23046875px;" viewBox="0 0 526.23046875 514"><style>#mermaidChart2 {font-family:sans-serif;font-size:16px;fill:#333;}#mermaidChart2 .error-icon{fill:#552222;}#mermaidChart2 .error-text{fill:#552222;stroke:#552222;}#mermaidChart2 .edge-thickness-normal{stroke-width:2px;}#mermaidChart2 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart2 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart2 .marker{fill:#333333;stroke:#333333;}#mermaidChart2 .marker.cross{stroke:#333333;}#mermaidChart2 svg{font-family:sans-serif;font-size:16px;}#mermaidChart2 .label{font-family:sans-serif;color:#333;}#mermaidChart2 .cluster-label text{fill:#333;}#mermaidChart2 .cluster-label span{color:#333;}#mermaidChart2 .label text,#mermaidChart2 span{fill:#333;color:#333;}#mermaidChart2 .node rect,#mermaidChart2 .node circle,#mermaidChart2 .node ellipse,#mermaidChart2 .node polygon,#mermaidChart2 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidChart2 .node .label{text-align:center;}#mermaidChart2 .node.clickable{cursor:pointer;}#mermaidChart2 .arrowheadPath{fill:#333333;}#mermaidChart2 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidChart2 .flowchart-link{stroke:#333333;fill:none;}#mermaidChart2 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidChart2 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidChart2 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidChart2 .cluster text{fill:#333;}#mermaidChart2 .cluster span{color:#333;}#mermaidChart2 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart2 :root{--mermaid-font-family:sans-serif;}#mermaidChart2 :root{--mermaid-alt-font-family:sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-A LE-B" id="L-A-B" style="opacity: 1;"><path class="path" d="M207.66796875,50L207.66796875,86L207.66796875,122" marker-end="url(#arrowhead108)" style="fill:none"></path><defs><marker id="arrowhead108" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-B LE-C" id="L-B-C" style="opacity: 1;"><path class="path" d="M167.2639802631579,164L98,200L98,236" marker-end="url(#arrowhead109)" style=" stroke-width: 3.5px;fill:none"></path><defs><marker id="arrowhead109" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-B LE-D" id="L-B-D" style="opacity: 1;"><path class="path" d="M248.0719572368421,164L317.3359375,200L317.3359375,236" marker-end="url(#arrowhead110)" style="fill:none"></path><defs><marker id="arrowhead110" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-D LE-E" id="L-D-E" style="opacity: 1;"><path class="path" d="M282.0063733552632,278L221.44140625,314L221.44140625,350" marker-end="url(#arrowhead111)" style=" stroke-width: 3.5px;fill:none"></path><defs><marker id="arrowhead111" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-D LE-F" id="L-D-F" style="opacity: 1;"><path class="path" d="M352.6655016447368,278L413.23046875,314L413.23046875,350" marker-end="url(#arrowhead112)" style="fill:none"></path><defs><marker id="arrowhead112" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-F LE-G" id="L-F-G" style="opacity: 1;"><path class="path" d="M387.0725740131579,392L342.23046875,428L342.23046875,464" marker-end="url(#arrowhead113)" style=" stroke-width: 3.5px;fill:none"></path><defs><marker id="arrowhead113" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g><g class="edgePath LS-F LE-H" id="L-F-H" style="opacity: 1;"><path class="path" d="M439.3883634868421,392L484.23046875,428L484.23046875,464" marker-end="url(#arrowhead114)" style="fill:none"></path><defs><marker id="arrowhead114" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(207.66796875,86)" style="opacity: 1;"><g transform="translate(-13.3515625,-11)" class="label"><rect rx="0" ry="0" width="26.703125" height="22"></rect><foreignObject width="26.703125" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-A-B" class="edgeLabel L-LS-A' L-LE-B">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(98,200)" style="opacity: 1;"><g transform="translate(-13.3515625,-11)" class="label"><rect rx="0" ry="0" width="26.703125" height="22"></rect><foreignObject width="26.703125" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-C" class="edgeLabel L-LS-B' L-LE-C">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(317.3359375,200)" style="opacity: 1;"><g transform="translate(-9.7734375,-11)" class="label"><rect rx="0" ry="0" width="19.546875" height="22"></rect><foreignObject width="19.546875" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-B-D" class="edgeLabel L-LS-B' L-LE-D">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(221.44140625,314)" style="opacity: 1;"><g transform="translate(-13.3515625,-11)" class="label"><rect rx="0" ry="0" width="26.703125" height="22"></rect><foreignObject width="26.703125" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-D-E" class="edgeLabel L-LS-D' L-LE-E">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(413.23046875,314)" style="opacity: 1;"><g transform="translate(-9.7734375,-11)" class="label"><rect rx="0" ry="0" width="19.546875" height="22"></rect><foreignObject width="19.546875" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-D-F" class="edgeLabel L-LS-D' L-LE-F">no</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(342.23046875,428)" style="opacity: 1;"><g transform="translate(-13.3515625,-11)" class="label"><rect rx="0" ry="0" width="26.703125" height="22"></rect><foreignObject width="26.703125" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-F-G" class="edgeLabel L-LS-F' L-LE-G">yes</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(484.23046875,428)" style="opacity: 1;"><g transform="translate(-9.7734375,-11)" class="label"><rect rx="0" ry="0" width="19.546875" height="22"></rect><foreignObject width="19.546875" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-F-H" class="edgeLabel L-LS-F' L-LE-H">no</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-70" transform="translate(207.66796875,29)" style="opacity: 1;"><rect rx="0" ry="0" x="-98" y="-21" width="196" height="42" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-88,-11)"><foreignObject width="176" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">基本調律が洞調律である</div></foreignObject></g></g></g><g class="node default" id="flowchart-B-71" transform="translate(207.66796875,143)" style="opacity: 1;"><rect rx="0" ry="0" x="-57.2421875" y="-21" width="114.484375" height="42" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-47.2421875,-11)"><foreignObject width="94.484375" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">早期P'波あり</div></foreignObject></g></g></g><g class="node default" id="flowchart-C-73" transform="translate(98,257)" style="opacity: 1;"><rect rx="0" ry="0" x="-90" y="-21" width="180" height="42" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-80,-11)"><foreignObject width="160" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">非伝導性上室期外収縮</div></foreignObject></g></g></g><g class="node default" id="flowchart-D-75" transform="translate(317.3359375,257)" style="opacity: 1;"><rect rx="0" ry="0" x="-79.3359375" y="-21" width="158.671875" height="42" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-69.3359375,-11)"><foreignObject width="138.671875" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">P波が規則的である</div></foreignObject></g></g></g><g class="node default" id="flowchart-E-77" transform="translate(221.44140625,371)" style="opacity: 1;"><rect rx="0" ry="0" x="-70.453125" y="-21" width="140.90625" height="42" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-60.453125,-11)"><foreignObject width="120.90625" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">2度房室ブロック</div></foreignObject></g></g></g><g class="node default" id="flowchart-F-79" transform="translate(413.23046875,371)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.3359375" y="-21" width="142.671875" height="42" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.3359375,-11)"><foreignObject width="122.671875" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">P-P間隔が整数倍</div></foreignObject></g></g></g><g class="node default" id="flowchart-G-81" transform="translate(342.23046875,485)" style="opacity: 1;"><rect rx="0" ry="0" x="-58" y="-21" width="116" height="42" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48,-11)"><foreignObject width="96" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">洞房ブロック</div></foreignObject></g></g></g><g class="node default" id="flowchart-H-83" transform="translate(484.23046875,485)" style="opacity: 1;"><rect rx="0" ry="0" x="-34" y="-21" width="68" height="42" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-24,-11)"><foreignObject width="48" height="22"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">洞停止</div></foreignObject></g></g></g></g></g></g></svg></div><h3 id='洞停止'><span>洞停止</span></h3><p><span>同結節の器質的障害や種々の外因から同結節の自動能が要請され、洞結節に電気的興奮が発生しない状態。</span>
 <span>P波は見られず、それに続くQRS-T波も見られない。刺激が再開されるタイミングが予測できないために、長いP-P間隔は洞調律の整数倍にならない。</span></p><h3 id='洞房ブロック'><span>洞房ブロック</span></h3><p><span>洞結節での興奮は発生しているものの心房への伝導が傷害されてP波が欠如する場合をいう。</span></p><ul><li><p><span>1度洞房ブロック - 洞房伝導時間の延長するものをいい、通常の心電図では異常としてみられない</span></p></li><li><p><span>2度洞房ブロック</span></p><ul><li><span>Wenckebach型 - 洞房伝導時間が徐々に延長した後に心房に伝導しなくなるもので、心電図ではP-P間隔が一拍ごとに短縮していき、P-QRS-T波が脱落する。この場合のP-P間隔は正常P-P間隔の2倍よりも短くなる。</span></li><li><span>Mobitz II型 - 突然洞房伝導が途絶するために、突然のP-P間隔の延長としてみられ、この延長したP-P間隔は本来のP-P間隔の整数倍となる。</span></li></ul></li><li><p><span>3度洞房ブロック - 洞結節の興奮が心棒に伝わらないためP波は見られず、接合部補充調律により心拍は保たれる。通常の心電図では洞停止との区別は不可能。</span></p></li></ul><p><img src="ECG.assets/image-20210113203915575.png" alt="image-20210113203915575" style="zoom:67%;" /></p><blockquote><p><strong><span>Wenchebach現象</span></strong></p><p><span>Wenchebach型2度房室ブロックは、PQ時間が徐々に延長した後にQRS波が脱落する。脱落する前のR-R間隔は徐々に短縮していき、それをWenchebach現象という。Wenchebach型洞房ブロックも同じ現象で説明できる。</span></p><p><span>例えば、洞結節の刺激が100ごとに出るとする。洞房時間が徐々に延長するが、その延長幅は段々と短くなっていくので、P-P間隔は徐々に短縮する。</span></p><p><img src="ECG.assets/image-20210113203543219.png" referrerpolicy="no-referrer" alt="image-20210113203543219"></p></blockquote><h2 id='wide-qrs'><span>Wide QRS</span></h2><p><span>QRS波の延長をきたす場合には、心室内の刺激伝導系の異常が考えられ、以下のような疾患があげられる</span></p><ul><li><p><span>脚ブロック</span></p></li><li><p><span>WPW症候群</span></p></li><li><p><span>非特異的心室内伝導障害 ←WPWと脚ブロックの特徴的な波形が見られない場合に考える</span></p><ul><li><span>心筋梗塞や左室肥大をきたす疾患</span></li><li><span>高血圧性心疾患</span></li><li><span>大動脈弁狭窄</span></li><li><span>肥大型心筋症</span></li><li><span>大動脈弁閉鎖不全症 など</span></li></ul></li></ul><p><img src="心電図.assets/image-20201229111952082.png" alt="image-20201229111952082" style="zoom:40%;" /></p><h3 id='脚ブロック'><span>脚ブロック</span></h3><p><u><span>I, V1, V6誘導のみで診断可能</span></u></p><h4 id='右脚ブロックrbbbright-bundle-branch-block'><span>右脚ブロック(RBBB：Right Bundle Branch Block)</span></h4><ol start='' ><li><span>V1誘導での三相波(rSR&#39;あるはrsR&#39;型)</span></li><li><span>I, V6誘導での幅広いS波</span></li></ol><p><span>QRS幅が0.10秒以上0.12秒未満を不完全右脚ブロック、0.12秒以上を完全右脚ブロックという。</span></p><h4 id='完全左脚ブロックlbbb'><span>完全左脚ブロック(LBBB)</span></h4><ol start='' ><li><span>V1誘導でのrSまたはQS型</span></li><li><span>I, V6誘導での幅広く分裂または結節を認める陽性R波</span></li><li><span>V1〜V3誘導での陽性T波とST上昇、V4〜V6誘導でのST下降・陰性T波</span></li></ol><p><span>左脚ブロックの興奮開始は、右室中隔部分と右室心尖部部分から始まり、次いで右室側及び中隔左室へ伝えられますが、左室の筋量が多いために右室側の興奮は打ち消され、左室に向かうベクトルのみ残る。そのため、V1誘導では遠ざかるS波となる。</span>
-<span>興奮の開始・広がりが正常と大きく異なるために回復過程であるT波も正常とは大きく異なり、二次的なST-T変化として現れる。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="python"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 不完全左脚ブロック</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">左室肥大症例に多く、肥大によるQRS波延長との区別がつきにくいとの見解や、存在自体を疑問視する声もある</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 40px;"></div><div class="CodeMirror-gutters" style="display: none; height: 40px;"></div></div></div></pre><blockquote><p><strong><span>間欠性右脚ブロック(intermittent RBBB)</span></strong></p><p><span>正常なQRS波の合間に右脚ブロックの波形が混在すること。</span>
+<span>興奮の開始・広がりが正常と大きく異なるために回復過程であるT波も正常とは大きく異なり、二次的なST-T変化として現れる。</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="python"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 不完全左脚ブロック</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">左室肥大症例に多く、肥大によるQRS波延長との区別がつきにくいとの見解や、存在自体を疑問視する声もある</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><blockquote><p><strong><span>間欠性右脚ブロック(intermittent RBBB)</span></strong></p><p><span>正常なQRS波の合間に右脚ブロックの波形が混在すること。</span>
 <span>心拍数の増加により出現する場合と心拍数の減少により出現する場合があるが、心拍数が増加した時に出現する心拍依存性が多いとされる。</span></p><p><img src="ECG.assets/image-20210114171933903.png" referrerpolicy="no-referrer" alt="image-20210114171933903"></p></blockquote><blockquote><p><strong><span>左脚分枝ブロック</span></strong></p><p><span>左脚は前枝と後枝の2本に大別されるとされており、どちらか一方の伝導障害を分枝ブロックという。</span>
 <span>完全左脚ブロックと異なり、分枝ブロックでは</span><u><span>QRS幅は正常(＜0.12秒)</span></u><span>である。</span></p><p><span>＜左脚前枝ブロックの診断基準＞</span></p><ul><li><span>QRS軸がー45°以上の左軸偏位を示す</span></li><li><span>QRS波がQ</span><sub><span>I</span></sub><span>S</span><sub><span>III</span></sub><span>型を示す</span></li></ul><p><span>＜左脚後枝ブロックの診断基準＞</span></p><ul><li><span>QRS波が＋120°以上の右軸偏位を示す</span></li><li><span>S</span><sub><span>I</span></sub><span>Q</span><sub><span>III</span></sub><span>型</span></li><li><span>垂直位心、右室肥大、右脚ブロック、側壁梗塞、WPW症候群(B型)、その他の著しいQRS軸の右軸偏位を示す例の除外</span></li></ul></blockquote><blockquote><p><strong><span>QRS波の分裂</span></strong></p><p><span>心臓の電気的ベクトルを直角に近い方向から見ている誘導(III, aVL, V3)では伝記的興奮が心室に伝搬する過程のわずかな電気ベクトルの振れが電流の変化を生じさせるために、QRSにノッチやスラー、分裂などの変形が生じる。</span>
 <span>これらの誘導にQRS時間の延長を伴わない分裂が生じても病的意義は無い。</span></p></blockquote><blockquote><p><strong><span>非特異的心室内伝導障害</span></strong></p><p><span>QRS幅は広いが、右脚ブロックとも左脚ブロックとも診断されない伝導障害のことを非特異的心室内伝導障害という。これは右脚や左脚などの心室内伝導路以外、つまり</span><u><span>プルキンエ線維や心室筋レベルでの広範なブロック</span></u><span>などで生じる。</span></p></blockquote><h3 id='wpw症候群'><span>WPW症候群</span></h3><p><span>心房と心室間に副伝導路(ケント束)が存在し、ケント束を通って早期に興奮が心室に伝わる。</span></p><ul><li><span>顕性WPW症候群</span></li><li><span>潜在性WPW症候群 - 順行性伝導を認めず、心室から辛抱への逆伝導のみが存在し、∆波を認めない</span></li><li><span>間欠性WPW症候群 - 順行性伝導を間欠的に認める。∆波が見られたり見られなかったりする</span></li></ul><p><span>心電図の特徴は、</span></p><ol start='' ><li><span>PQ時間の短縮</span></li><li><span>∆波の存在</span></li><li><span>QRS幅の延長</span></li></ol><p><span>ケント束の位置によってA, B, C型に分けられ、特徴的な心電図所見を示す。</span></p><p><img src="心電図.assets/image-20201229120342736.png" alt="image-20201229120342736" style="zoom:100%;" /></p><ul><li><span>A型：V1誘導で上向きの∆波を伴った高いR波</span></li><li><span>B型：V1誘導でrS型</span></li><li><span>C型：V1誘導でQS型あるいはQr型</span></li></ul><p><img src="心電図.assets/image-20201229120900621.png" alt="image-20201229120900621" style="zoom:43%;" /></p><p><span>実臨床ではさらに前後方向の情報を加えることが必要で、II, III, aVF誘導のうちの2つの誘導で∆波が陽性であれば前壁、陰性であれば後壁、いずれでもない場合には側壁または中中隔の副伝導路が疑われる。</span></p><blockquote><p><strong><span>房室回帰性頻拍(AVRT：Atrioventricular Reentant Tachycardia)</span></strong></p><p><span>心房と心室を連結する副伝導路が存在する疾患に期外収縮が起こった時に起こるリエントリー性頻拍</span>
