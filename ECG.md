@@ -3,7 +3,7 @@
 
 ## 読み方
 
-<img src="ECG.assets/image-20210303230802385.png" alt="image-20210303230802385" style="zoom: 43%;" />
+<img src="ECG.assets/image-20210303230802385.png" alt="image-20210303230802385" style="zoom:67%;" />
 
 ## 感度・紙送り
 
@@ -37,7 +37,7 @@
 | ------------------------------ | ------------------------------------------------------------ |
 | 右室肥大<br />左脚後枝ブロック | 左室肥大<br />左脚前枝ブロック<br />房室中隔欠損症(AVSD)、心内膜床欠損症(ECD) |
 
-<img src="ECG.assets/IMG_BAFC7DA47338-1.jpeg" alt="IMG_BAFC7DA47338-1" style="zoom:40%;" />
+<img src="ECG.assets/IMG_BAFC7DA47338-1.jpeg" alt="IMG_BAFC7DA47338-1"  />
 
 ## 移行帯
 
@@ -78,7 +78,7 @@ R波とS波の高さの比が1になるところを移行帯という。
 |            | R波(r波)に続き陰性波が2つある    | 一つ目：S波(s波)<br />二つ目：S'波(s'波) |
 |            | QRS波全体が陰性波のみ            | QSパターン                               |
 
-<img src="ECG.assets/IMG_6A6ACF06D176-1.jpeg" alt="IMG_6A6ACF06D176-1" style="zoom: 67%;" />
+<img src="ECG.assets/IMG_6A6ACF06D176-1.jpeg" alt="IMG_6A6ACF06D176-1" style="zoom: 100%;" />
 
 ## P波の見方
 
@@ -253,13 +253,13 @@ IとaVL誘導が下向きであれば、側壁起源、上向きであれば側�
 >
 > 間入性心室期外収縮の後のPQ時間は延長していることがある。これは心室期外収縮による興奮が逆行性に房室結節に伝導し、相対不応期が残っている(潜行伝導：concealed conduction)ために、房室結節内での伝導が遅くなる事による現象。
 >
-> <img src="ECG.assets/image-20210106115241100.png" alt="image-20210106115241100" style="zoom:20%;" />
+> <img src="ECG.assets/image-20210106115241100.png" alt="image-20210106115241100" style="zoom: 33%;" />
 
 > **Lown分類(Lown's grade)**
 >
 > Lownらは虚血性心疾患症例の突然死の成績をもとに、心室性期外収縮（PVC）の重症度を出現数、出現様式よりgrade1～5に分類した。現在もPVCの重症度評価に広く用いられているが、本来、心筋梗塞急性期の心室細動への移行の危険性から出発した分類であるため、さまざまな心疾患、心機能患者すべてに当てはめるには限界がある。
 >
-> ![Lown分類](ECG.assets/4-35Lown-grade.png)
+> <img src="ECG.assets/4-35Lown-grade.png" alt="Lown分類" style="zoom:150%;" />
 
 ### 融合収縮
 
@@ -298,7 +298,7 @@ IとaVL誘導が下向きであれば、側壁起源、上向きであれば側�
 >
 > 正常人でも起こりうるもので病的意義はない。迷走神経緊張時や、ジギタリスが原因となることもある。また、器質的な心疾患やリウマチ熱罹患時にも起こることがある。
 >
-> <img src="ECG.assets/image-20210301210654905.png" alt="image-20210301210654905" style="zoom:23%;" />
+> <img src="ECG.assets/image-20210301210654905.png" alt="image-20210301210654905" style="zoom: 33%;" />
 
 ## 心房細動 (AF：Atrial Fibrillation)
 
@@ -634,7 +634,7 @@ P波・QRS波は正常、R-R間隔も一定。
 
 <u>F波はQRS波を取り除いた時に前後でつながっているように見える</u>。
 
-<img src="ECG.assets/image-20210225133917061.png" alt="image-20210225133917061" style="zoom:47%;" />
+<img src="ECG.assets/image-20210225133917061.png" alt="image-20210225133917061" style="zoom: 67%;" />
 
 未治療例では2：1伝導が多いと言われている。
 1：1や2：1ではF波がQRS波に重なって発作性上室頻拍との鑑別がしばしば困難である。
@@ -757,11 +757,11 @@ II度房室ブロックはWenckebach型とMobitz II型に分けられるが、P�
 
 #### Wenckebach型(Mobitz I型)
 
-<img src="ECG.assets/image-20210227223929123.png" alt="image-20210227223929123" style="zoom: 43%;" />
+<img src="ECG.assets/image-20210227223929123.png" alt="image-20210227223929123" style="zoom:67%;" />
 
 #### Mobitz II型
 
-<img src="ECG.assets/image-20210227224015337.png" alt="image-20210227224015337" style="zoom:43%;" />
+<img src="ECG.assets/image-20210227224015337.png" alt="image-20210227224015337" style="zoom: 67%;" />
 
 #### 完全房室ブロック
 
@@ -1385,7 +1385,7 @@ J波は低体温患者の80%に認められ、体温が32℃以下でみられ�
 早期再分極は<u>Ⅱ, Ⅲ, aVF(下壁誘導)もしくはⅠ, aVL, V4～V6(側壁誘導)のいずれかの2誘導以上における0.1mV以上のスラー型またはノッチ型のJ点の上昇</u>と定義されている。しかし、右側胸部誘導に早期再分極を認める報告もあり、いまだに診断基準は決まっていない。
 下に凸のST上昇を広範な誘導に認めることが多く、移行帯付近、すなわちV4において最大であることが多い。またST上昇は高く尖ったT波に連続する
 
-<img src="ECG.assets/image-20210407203732470.png" alt="image-20210407203732470" style="zoom:20%;" />
+<img src="ECG.assets/image-20210407203732470.png" alt="image-20210407203732470" style="zoom: 50%;" />
 
 早期再分極症候群例に置いてJ点の高さはさまざまな状況下で変動し、時に消失する。
 通常、J点の高さはポーズや徐脈時に増強し、心室細動発作の直前には最も高くなる。一方で、心室細動の既往のない健常人では徐脈時にJ点の高さが変化しないと言われている。
@@ -1520,7 +1520,7 @@ ARVCで見られやすい心電図所見をまとめると以下の様になる�
 レシピエント側の左右心房の一部を残してドナーの両心房を吻合する心臓移植(両心房法)術後では、心電図でレシピエントの心房のP波と、ドナーの心房のP波がみられる。
 レシピエントのP波はQRSとは連結せず、ドナーの心房からのP波はQRSに先行する。
 
-<img src="ECG.assets/Orthotopic_Heart_Transplant.png" alt="img" style="zoom: 80%;" />
+<img src="ECG.assets/Orthotopic_Heart_Transplant.png" alt="img"  />
 
 ## 小児の心電図
 
@@ -1547,7 +1547,9 @@ ARVCで見られやすい心電図所見をまとめると以下の様になる�
 ### 左室肥大
 
 左側胸部誘導でのST-T部の肥大性変化が重要な所見である。QRSベクトルは大きさを増して左後方に向かう。その結果、V1で深いS波、V5・V6で高いR波を示す。
-先天性心疾患では最も頻度が高い心室中隔欠損症(VSD)では心不全症状を伴うような例に左室肥大診断基準を満たす例が多い。<img src="ECG.assets/image-20210323213658347.png" alt="image-20210323213658347" style="zoom:80%;" />
+先天性心疾患では最も頻度が高い心室中隔欠損症(VSD)では心不全症状を伴うような例に左室肥大診断基準を満たす例が多い。
+
+<img src="ECG.assets/image-20210323213658347.png" alt="image-20210323213658347"  />
 
 ### 修正大血管転位
 
